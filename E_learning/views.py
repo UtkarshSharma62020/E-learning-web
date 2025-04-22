@@ -6,7 +6,6 @@ from Contact.models import User_Contact
 from django.contrib.auth.decorators import login_required
 
 
-@login_required
 def home(request):
     return render(request, 'index.html')    # You can access request.user in the template
 
