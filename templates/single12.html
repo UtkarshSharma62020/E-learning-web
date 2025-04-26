@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Course</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url 'courses' %}">Course</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">C for Beginners</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Course Detail Start -->
+<div class="container-xxl py-2" style="font-family: 'Segoe UI', sans-serif; background-color: #f8f9fc;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 wow fadeInUp">
+
+                <div class="container">
+                    <div class="row g-5 justify-content-center">
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 style="color: #1d3557;">C for Beginners</h2>
+                            <p style="color: #333;">Master the basics of C programming with this beginner-friendly course. Covering all the essential concepts such as variables, loops, functions, and pointers, this course is designed to give you a strong foundation in C programming.</p>
+                            <div class="d-flex" style="color: #555;">
+                                <small><i class="fa fa-star text-warning"></i> 4.5</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 1.5L+ Learners</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user"></i> Beginner</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> 10 Hrs</small>
+                            </div>
+                            <div class="image-div text-left mt-3">
+                                <img src="{% static 'testimonial-2.jpg' %}" alt="" style="height: 40px; width: 40px; border-radius: 50%;">
+                                <span style="margin-left: 10px; color: #1d3557;"><b>Instructor Name</b> - Sarah Lee</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid wow fadeInUp mt-5" style="padding-left:0;padding-right:0;">
+                    <div class="tab-content mt-4">
+                        <div class="tab-pane container active" id="Overview">
+                            <h2 style="color: #1d3557;">About this Course</h2>
+                            <p style="color: #333;">This course is aimed at beginners who wish to learn C programming. It starts from the very basics and gradually progresses to more advanced topics like arrays, functions, and memory management. By the end, you'll be confident in writing C programs.</p>
+
+                            <h2 class="mt-4" style="color: #1d3557;">Skills you'll gain</h2>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">C Programming</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Memory Management</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Functions</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Pointers</span>
+                        </div>
+
+                        <div class="container" id="Curriculum">
+                            <h2 class="mt-4" style="color: #1d3557;">Syllabus</h2>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c1" style="color: #1d3557;">
+                                            Introduction to C Programming
+                                        </button>
+                                    </h2>
+                                    <div id="c1" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Basic Syntax</li>
+                                                <li><i class="fa fa-video text-danger"></i> Data Types</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c2" style="color: #1d3557;">
+                                            Functions and Arrays
+                                        </button>
+                                    </h2>
+                                    <div id="c2" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Defining Functions</li>
+                                                <li><i class="fa fa-video text-danger"></i> Arrays in C</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c3" style="color: #1d3557;">
+                                            Pointers and Memory Management
+                                        </button>
+                                    </h2>
+                                    <div id="c3" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Introduction to Pointers</li>
+                                                <li><i class="fa fa-video text-danger"></i> Dynamic Memory Allocation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Instructor -->
+                        <div class="container" id="Instructor">
+                            <h2 class="mt-4" style="color: #1d3557;">About the Instructor</h2>
+                            <div class="image-div text-left mt-4">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6">
+                                        <img src="{% static 'testimonial-2.jpg' %}" alt="" style="height: 150px; width: 150px; border-radius: 50%;">
+                                    </div>
+                                    <div class="col-lg-9 col-md-6 mt-2">
+                                        <h5 style="color: #1d3557;">Sarah Lee</h5>
+                                        <p style="color: #555;">C Programming Expert</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p><i class="fa fa-star"></i> 4.7 Instructor rating</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-check"></i> 950 reviews</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-user"></i> 2,000 Students</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-video"></i> 5 courses</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="des mt-4 mb-5" style="color: #333;">
+                                    Sarah is a C programming expert with years of experience in teaching and creating software solutions. She is passionate about making programming concepts easier to understand and loves helping students succeed.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s" style="background-color: #ffffff; border-radius: 8px;">
+                <div class="image text-center">
+                    <img class="img-fluid mt-2" src="{% static 'course-12.png' %}" alt="" style="max-height: 200px; width: 100%; object-fit: cover;">
+                </div>
+
+                <h4 class="mt-2 p-2 text-center" style="color: #2a9d8f;">Free</h4>
+                <h4 class="mt-2 p-2 text-center" style="color: #e63946;">Rs. <small><del>3,500</del></small></h4>
+
+                <div class="buttons px-3">
+                    <a href="#" class="text-decoration-none text-white btn w-100 mb-2" style="background-color: #1d3557;">ENROLL NOW</a>
+                </div>
+
+                <div class="list mt-2 px-3">
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-clock"></i> Duration</p><p>10 Hrs</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-book"></i> Lectures</p><p>15</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-bolt"></i> Enrolled</p><p>2,000 students</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-language"></i> Language</p><p>English</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Skill Level</p><p>Beginner</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Deadline</p><p>Lifetime</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-certificate"></i> Certificate</p><p>Yes</p></div>
+                    <div class="text-center mt-4 mb-4">
+                        <i class="fa fa-share"></i> <a href="#" style="text-decoration: none; color: #1d3557;">Share this Course</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Course Detail End -->
+
+{% endblock %}

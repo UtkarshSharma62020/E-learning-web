@@ -3,6 +3,16 @@
 
 {% block content %}
 
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
         <div class="container py-5">
@@ -185,83 +195,91 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
-                <h5 class="mb-4">Join CodeBloom's Global Community
-                    of Expert Instructors</h5>
+            <form method="post">
+                {% csrf_token %}
+                <h5 class="mb-4">Join CodeBloom's Global Community of Expert Instructors</h5>
                 <div class="row g-3">
+                    
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="f_name" placeholder="First Name">
-                            <label for="name">First Name</label>
+                            <input type="text" class="form-control" id="f_name" name="f_name" placeholder="First Name">
+                            <label for="f_name">First Name</label>
                         </div>
                     </div>
+            
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="l_name" placeholder="Last Name">
-                            <label for="name">Last Name</label>
+                            <input type="text" class="form-control" id="l_name" name="l_name" placeholder="Last Name">
+                            <label for="l_name">Last Name</label>
                         </div>
                     </div>
-
+            
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                             <label for="email">Your Email</label>
                         </div>
                     </div>
+            
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
-                            <label for="name">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                            <label for="phone">Phone Number</label>
                         </div>
                     </div>
                     
                     <div class="col-12">
                         <div class="form-floating">
-                            <label for="degree">What is the highest degree ?</label>
+                            <label for="degree">What is the highest degree?</label>
                             <select name="degree" id="degree" class="form-control">
-                            <option value="..">...</option>
-                            <option value="High School">High School</option>
-                            <option value="Undergraduate">Undergraduate</option>
-                            <option value="Graduate">Graduate</option>
-                            <option value="Post-Graduate">Post-Graduate</option>
-                        </select>
+                                <option value="..">...</option>
+                                <option value="High School">High School</option>
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Post-Graduate">Post-Graduate</option>
+                            </select>
                         </div>
                     </div>
                     
                     <div class="col-12">
                         <div class="form-floating">
-                            <label for="degree">What subject would you like to teach?</label>
-                            <select name="degree" id="degree" class="form-control">
-                            <option value="..">...</option>
-                            <option value="Technology">Technology</option>
-                            <option value="Marketing">Marketing</option>
-                            <option value="Business">Business</option>
-                            <option value="Education">Education</option>
-                        </select>
+                            <label for="subject">What subject would you like to teach?</label>
+                            <select name="subject" id="subject" class="form-control">
+                                <option value="..">...</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Business">Business</option>
+                                <option value="Education">Education</option>
+                            </select>
                         </div>
                     </div>
-                    
-                    
+            
                     <div class="col-12">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a message here" id="address"
-                                style="height: 150px"></textarea>
-                            <label for="message">Address</label>
+                            <textarea class="form-control" placeholder="Leave a message here" id="address" name="address" style="height: 150px"></textarea>
+                            <label for="address">Address</label>
                         </div>
                     </div>
+            
                     <div class="col-12">
-                        <div class="">
-                            <input type="checkbox">
-                            I acknowledge and warrant the truthfulness of the information I submit, I also acknowledge that I have read, understand, and I agree with all Terms of service, and that I fully agree that all sales are final and that there are no refunds whatsoever.
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="terms_accepted" name="terms_accepted">
+                            <label class="form-check-label" for="terms_accepted">
+                                I acknowledge and warrant the truthfulness of the information I submit, I also acknowledge that I have read, understand, and I agree with all Terms of service, and that I fully agree that all sales are final and that there are no refunds whatsoever.
+                            </label>
                         </div>
                     </div>
-                 
+            
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary mt-3">Apply</button>
+                    </div>
+            
                 </div>
             </form>
+            
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn text-white">Apply</button>
         </div>
       </div>
     </div>

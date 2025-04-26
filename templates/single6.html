@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Course</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url "home" %}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url "courses" %}">Course</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">ChatGPT for Beginners</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Course Detail Start -->
+<div class="container-xxl py-2" style="font-family: 'Segoe UI', sans-serif; background-color: #f8f9fc;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 wow fadeInUp">
+
+                <div class="container">
+                    <div class="row g-5 justify-content-center">
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 style="color: #1d3557;">ChatGPT for Beginners</h2>
+                            <p style="color: #333;">Learn how to interact with ChatGPT, create conversational AI applications, and understand its capabilities in real-world scenarios.</p>
+                            <div class="d-flex" style="color: #555;">
+                                <small><i class="fa fa-star text-warning"></i> 4.8</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 5L+ Learners</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user"></i> Beginner</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> 2 Hrs</small>
+                            </div>
+                            <div class="image-div text-left mt-3">
+                                <img src="{% static 'testimonial-1.jpg' %}" alt="" style="height: 40px; width: 40px; border-radius: 50%;">
+                                <span style="margin-left: 10px; color: #1d3557;"><b>Instructor Name</b> - Dr. Priya Sharma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid wow fadeInUp mt-5" style="padding-left:0;padding-right:0;">
+                    <div class="tab-content mt-4">
+                        <div class="tab-pane container active" id="Overview">
+                            <h2 style="color: #1d3557;">About this Course</h2>
+                            <p style="color: #333;">This course will introduce you to ChatGPT, a powerful language model, and show you how to use it for creating engaging conversational experiences in AI-powered applications.</p>
+
+                            <h2 class="mt-4" style="color: #1d3557;">Skills you'll gain</h2>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Natural Language Processing</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Conversational AI</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Chatbot Development</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Prompt Engineering</span>
+                        </div>
+
+                        <div class="container" id="Curriculum">
+                            <h2 class="mt-4" style="color: #1d3557;">Syllabus</h2>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#chatgpt1" style="color: #1d3557;">
+                                            Introduction to ChatGPT
+                                        </button>
+                                    </h2>
+                                    <div id="chatgpt1" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> What is ChatGPT?</li>
+                                                <li><i class="fa fa-video text-danger"></i> Setting up ChatGPT API</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#chatgpt2" style="color: #1d3557;">
+                                            Creating Your First Chatbot
+                                        </button>
+                                    </h2>
+                                    <div id="chatgpt2" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Crafting Prompts</li>
+                                                <li><i class="fa fa-video text-danger"></i> Building a Conversational Flow</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#chatgpt3" style="color: #1d3557;">
+                                            Advanced Features
+                                        </button>
+                                    </h2>
+                                    <div id="chatgpt3" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Fine-tuning Models</li>
+                                                <li><i class="fa fa-video text-danger"></i> Use Cases in Industry</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Instructor -->
+                        <div class="container" id="Instructor">
+                            <h2 class="mt-4" style="color: #1d3557;">About the Instructor</h2>
+                            <div class="image-div text-left mt-4">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6">
+                                        <img src="{% static 'testimonial-1.jpg' %}" alt="" style="height: 150px; width: 150px; border-radius: 50%;">
+                                    </div>
+                                    <div class="col-lg-9 col-md-6 mt-2">
+                                        <h5 style="color: #1d3557;">Dr. Priya Sharma</h5>
+                                        <p style="color: #555;">AI Researcher and Developer</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p><i class="fa fa-star"></i> 4.9 Instructor rating</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-check"></i> 1,500 reviews</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-user"></i> 800 Students</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-video"></i> 5 courses</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="des mt-4 mb-5" style="color: #333;">
+                                    Dr. Priya Sharma is an AI expert with years of experience working with various language models. She is passionate about teaching and making AI accessible.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s" style="background-color: #ffffff; border-radius: 8px;">
+                <div class="image text-center">
+                    <img class="img-fluid mt-2" src="{% static 'course-6.jpg' %}" alt="" style="max-height: 200px; width: 100%; object-fit: cover;">
+                </div>
+
+                <h4 class="mt-2 p-2 text-center" style="color: #2a9d8f;">Free</h4>
+                <h4 class="mt-2 p-2 text-center" style="color: #e63946;">Rs. <small><del>2,000</del></small></h4>
+
+                <div class="buttons px-3">
+                    <a href="#" class="text-decoration-none text-white btn w-100 mb-2" style="background-color: #1d3557;">ENROLL NOW</a>
+                </div>
+
+                <div class="list mt-2 px-3">
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-clock"></i> Duration</p><p>2 Hrs</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-book"></i> Lectures</p><p>6</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-bolt"></i> Enrolled</p><p>1,000 students</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-language"></i> Language</p><p>English</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Skill Level</p><p>Beginner</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Deadline</p><p>Lifetime</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-certificate"></i> Certificate</p><p>Yes</p></div>
+                    <div class="text-center mt-4 mb-4">
+                        <i class="fa fa-share"></i> <a href="#" style="text-decoration: none; color: #1d3557;">Share this Course</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Course Detail End -->
+
+{% endblock %}

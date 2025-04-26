@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Course</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url "home" %}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url "courses" %}">Course</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Python Programming</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Course Detail Start -->
+<div class="container-xxl py-2" style="font-family: 'Segoe UI', sans-serif; background-color: #f8f9fc;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 wow fadeInUp">
+
+                <div class="container">
+                    <div class="row g-5 justify-content-center">
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 style="color: #1d3557;">Python Programming</h2>
+                            <p style="color: #333;">Start your coding journey with Python — one of the most beginner-friendly programming languages in the world.</p>
+                            <div class="d-flex" style="color: #555;">
+                                <small><i class="fa fa-star text-warning"></i> 4.8</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 10L+ Learners</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user"></i> Beginner</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> 4 Hrs</small>
+                            </div>
+                            <div class="image-div text-left mt-3">
+                                <img src="{% static 'testimonial-2.jpg' %}" alt="" style="height: 40px; width: 40px; border-radius: 50%;">
+                                <span style="margin-left: 10px; color: #1d3557;"><b>Instructor Name</b> - Priya Das</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid wow fadeInUp mt-5" style="padding-left:0;padding-right:0;">
+                    <div class="tab-content mt-4">
+                        <div class="tab-pane container active" id="Overview">
+                            <h2 style="color: #1d3557;">About this Course</h2>
+                            <p style="color: #333;">Python is a powerful and easy-to-learn programming language. This course will guide you through variables, control structures, functions, and object-oriented programming.</p>
+
+                            <h2 class="mt-4" style="color: #1d3557;">Skills you'll gain</h2>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Variables & Data Types</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Loops & Conditional Logic</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">Functions & Modules</span>
+                            <span class="badge rounded-pill px-4 py-2 m-2" style="background-color: #457b9d; color: white;">OOP in Python</span>
+                        </div>
+
+                        <div class="container" id="Curriculum">
+                            <h2 class="mt-4" style="color: #1d3557;">Syllabus</h2>
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#py1" style="color: #1d3557;">
+                                            Introduction to Python
+                                        </button>
+                                    </h2>
+                                    <div id="py1" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Why Learn Python?</li>
+                                                <li><i class="fa fa-video text-danger"></i> Setting Up Python</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#py2" style="color: #1d3557;">
+                                            Core Concepts
+                                        </button>
+                                    </h2>
+                                    <div id="py2" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Variables & Data Types</li>
+                                                <li><i class="fa fa-video text-danger"></i> Conditional Statements</li>
+                                                <li><i class="fa fa-video text-danger"></i> Loops</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" style="background-color: #f1f5f9;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#py3" style="color: #1d3557;">
+                                            Functions & OOP
+                                        </button>
+                                    </h2>
+                                    <div id="py3" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <ul style="list-style-type: none; padding-left: 0;">
+                                                <li><i class="fa fa-video text-danger"></i> Defining Functions</li>
+                                                <li><i class="fa fa-video text-danger"></i> Introduction to OOP</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Instructor -->
+                        <div class="container" id="Instructor">
+                            <h2 class="mt-4" style="color: #1d3557;">About the Instructor</h2>
+                            <div class="image-div text-left mt-4">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6">
+                                        <img src="{% static 'testimonial-2.jpg' %}" alt="" style="height: 150px; width: 150px; border-radius: 50%;">
+                                    </div>
+                                    <div class="col-lg-9 col-md-6 mt-2">
+                                        <h5 style="color: #1d3557;">Priya Das</h5>
+                                        <p style="color: #555;">Senior Python Developer</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p><i class="fa fa-star"></i> 4.9 Instructor rating</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-check"></i> 3,120 reviews</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-user"></i> 900 Students</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-video"></i> 20 courses</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="des mt-4 mb-5" style="color: #333;">
+                                    A passionate educator and developer focused on helping beginners master Python and backend development.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s" style="background-color: #ffffff; border-radius: 8px;">
+                <div class="image text-center">
+                    <img class="img-fluid mt-2" src="{% static 'course-4.jpg' %}" alt="" style="max-height: 200px; width: 100%; object-fit: cover;">
+                </div>
+
+                <h4 class="mt-2 p-2 text-center" style="color: #2a9d8f;">Free</h4>
+                <h4 class="mt-2 p-2 text-center" style="color: #e63946;">Rs. <small><del>2,000</del></small></h4>
+
+                <div class="buttons px-3">
+                    <a href="#" class="text-decoration-none text-white btn w-100 mb-2" style="background-color: #1d3557;">ENROLL NOW</a>
+                </div>
+
+                <div class="list mt-2 px-3">
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-clock"></i> Duration</p><p>4 Hrs</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-book"></i> Lectures</p><p>9</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-bolt"></i> Enrolled</p><p>920 students</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-language"></i> Language</p><p>English</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Skill Level</p><p>Beginner</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Deadline</p><p>Lifetime</p></div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-certificate"></i> Certificate</p><p>Yes</p></div>
+                    <div class="text-center mt-4 mb-4">
+                        <i class="fa fa-share"></i> <a href="#" style="text-decoration: none; color: #1d3557;">Share this Course</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Course Detail End -->
+
+{% endblock %}

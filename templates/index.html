@@ -13,11 +13,17 @@
                 <div class="container">
                     <div class="row justify-content-start">
                         <div class="col-sm-10 col-lg-8">
-                            <h5 class="text-uppercase mb-3 animated slideInDown" style="color: #ff9933;">Top-Rated E-Learning Hub</h5>
-                            <h1 class="display-4 fw-bold text-white animated slideInDown">Master In-Demand Skills With Free Courses & Certificates</h1>
-                            <p class="text-white mb-4 pb-2">Access expertly curated content across technology, design, business, and more. Kickstart your journey towards success!</p>
-                            <a href="{% url 'about' %}" class="btn btn-warning text-dark py-md-3 px-md-5 me-3 animated slideInLeft">Learn More</a>
-                            <a href="{% url 'signup' %}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Join Us</a>
+                            <h5 class="text-uppercase mb-3 animated slideInDown" style="color: #ff9933;">Top-Rated
+                                E-Learning Hub</h5>
+                            <h1 class="display-4 fw-bold text-white animated slideInDown">Master In-Demand Skills With
+                                Free Courses & Certificates</h1>
+                            <p class="text-white mb-4 pb-2">Access expertly curated content across technology, design,
+                                business, and more. Kickstart your journey towards success!</p>
+                            <a href="{% url 'about' %}"
+                                class="btn btn-warning text-dark py-md-3 px-md-5 me-3 animated slideInLeft">Learn
+                                More</a>
+                            <a href="{% url 'signup' %}"
+                                class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Join Us</a>
                         </div>
                     </div>
                 </div>
@@ -30,11 +36,16 @@
                 <div class="container">
                     <div class="row justify-content-start">
                         <div class="col-sm-10 col-lg-8">
-                            <h5 class="text-uppercase mb-3 animated slideInDown" style="color: #ff9933;">Welcome to Code Bloom</h5>
-                            <h1 class="display-4 fw-bold text-white animated slideInDown">Immersive & Engaging Learning Experience</h1>
-                            <p class="text-white mb-4 pb-2">Discover hands-on lessons, real-time quizzes, and practical projects that drive deeper understanding and long-term retention.</p>
-                            <a href="{% url 'about' %}" class="btn btn-warning text-dark py-md-3 px-md-5 me-3 animated slideInLeft">Explore</a>
-                            <a href="{% url 'signup' %}" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Get Started</a>
+                            <h5 class="text-uppercase mb-3 animated slideInDown" style="color: #ff9933;">Welcome to Code
+                                Bloom</h5>
+                            <h1 class="display-4 fw-bold text-white animated slideInDown">Immersive & Engaging Learning
+                                Experience</h1>
+                            <p class="text-white mb-4 pb-2">Discover hands-on lessons, real-time quizzes, and practical
+                                projects that drive deeper understanding and long-term retention.</p>
+                            <a href="{% url 'about' %}"
+                                class="btn btn-warning text-dark py-md-3 px-md-5 me-3 animated slideInLeft">Explore</a>
+                            <a href="{% url 'signup' %}"
+                                class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -50,46 +61,79 @@
         <div class="row text-center mb-5">
             <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
                 <h1 class="fw-bold" style="color: #ff9933;">Advance Your Career With Code Bloom</h1>
-                <p class="text-muted">Unlock unlimited access to industry-led programs, professional certificates, and hands-on projects—all at your fingertips.</p>
+                <p class="text-muted">Unlock unlimited access to industry-led programs, professional certificates, and
+                    hands-on projects—all at your fingertips.</p>
             </div>
         </div>
         <div class="row g-4">
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item text-center pt-4 shadow-lg rounded">
-                    <div class="p-4">
-                        <img src="{% static 'icon1.png' %}" alt="Learn" width="60px" class="mb-4">
-                        <h5 class="mb-3 text-primary">Learn Without Limits</h5>
-                        <p>Browse trending topics or explore your passion—our courses help you thrive in every field.</p>
-                    </div>
-                </div>
+                {% if user.is_authenticated %}
+                <a href="{% url 'courses' %}" class="text-decoration-none text-dark">
+                    {% else %}
+                    <a href="{% url 'signup' %}" class="text-decoration-none text-dark">
+                        {% endif %}
+                        <div class="service-item text-center pt-4 shadow-lg rounded">
+                            <div class="p-4">
+                                <img src="{% static 'icon1.png' %}" alt="Learn" width="60px" class="mb-4">
+                                <h5 class="mb-3 text-primary">Learn Without Limits</h5>
+                                <p>Browse trending topics or explore your passion—our courses help you thrive in every
+                                    field.</p>
+                            </div>
+                        </div>
+                    </a>
             </div>
+
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item text-center pt-4 shadow-lg rounded">
-                    <div class="p-4">
-                        <img src="{% static 'icon2.png' %}" alt="Save Money" width="60px" class="mb-4">
-                        <h5 class="mb-3 text-primary">Cost-Efficient Learning</h5>
-                        <p>Maximize your investment by enrolling in multiple high-value courses at minimal cost.</p>
-                    </div>
-                </div>
+                {% if user.is_authenticated %}
+                <a href="{% url 'courses' %}" class="text-decoration-none text-dark">
+                    {% else %}
+                    <a href="{% url 'signup' %}" class="text-decoration-none text-dark">
+                        {% endif %}
+                        <div class="service-item text-center pt-4 shadow-lg rounded">
+                            <div class="p-4">
+                                <img src="{% static 'icon2.png' %}" alt="Save Money" width="60px" class="mb-4">
+                                <h5 class="mb-3 text-primary">Cost-Efficient Learning</h5>
+                                <p>Maximize your investment by enrolling in multiple high-value courses at minimal cost.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
             </div>
+
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center pt-4 shadow-lg rounded">
-                    <div class="p-4">
-                        <img src="{% static 'icon3.png' %}" alt="Flexibility" width="60px" class="mb-4">
-                        <h5 class="mb-3 text-primary">Learn Your Way</h5>
-                        <p>Set your own pace—pause, resume, or shift between topics based on your goals and time.</p>
-                    </div>
-                </div>
+                {% if user.is_authenticated %}
+                <a href="{% url 'courses' %}" class="text-decoration-none text-dark">
+                    {% else %}
+                    <a href="{% url 'signup' %}" class="text-decoration-none text-dark">
+                        {% endif %}
+                        <div class="service-item text-center pt-4 shadow-lg rounded">
+                            <div class="p-4">
+                                <img src="{% static 'icon3.png' %}" alt="Flexibility" width="60px" class="mb-4">
+                                <h5 class="mb-3 text-primary">Learn Your Way</h5>
+                                <p>Set your own pace—pause, resume, or shift between topics based on your goals and
+                                    time.</p>
+                            </div>
+                        </div>
+                    </a>
             </div>
+
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item text-center pt-4 shadow-lg rounded">
-                    <div class="p-4">
-                        <img src="{% static 'icon4.png' %}" alt="Certificates" width="60px" class="mb-4">
-                        <h5 class="mb-3 text-primary">Endless Certificates</h5>
-                        <p>Receive certificates for every completed program without any hidden or extra charges.</p>
-                    </div>
-                </div>
+                {% if user.is_authenticated %}
+                <a href="{% url 'courses' %}" class="text-decoration-none text-dark">
+                    {% else %}
+                    <a href="{% url 'signup' %}" class="text-decoration-none text-dark">
+                        {% endif %}
+                        <div class="service-item text-center pt-4 shadow-lg rounded">
+                            <div class="p-4">
+                                <img src="{% static 'icon4.png' %}" alt="Certificates" width="60px" class="mb-4">
+                                <h5 class="mb-3 text-primary">Endless Certificates</h5>
+                                <p>Receive certificates for every completed program without any hidden or extra charges.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
             </div>
+
         </div>
     </div>
 </div>
@@ -101,22 +145,39 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="img-fluid w-100 h-100 rounded shadow" src="{% static "about.png" %}" alt="About Code Bloom"
-                        style="object-fit: cover;">
+                    <img class="img-fluid w-100 h-100 rounded shadow" src="{% static 'about.png' %}"
+                        alt="About Code Bloom" style="object-fit: cover;">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                 <h6 class="section-title bg-white text-start text-primary pe-3">Our Story</h6>
                 <h1 class="mb-4 fw-bold" style="color: #ff9933;">Discover Code Bloom</h1>
-                <p class="text-muted mb-4">At Code Bloom, we’re reshaping online education by making it flexible, innovative, and learner-centered. With personalized paths and expert instructors, we guide you to real-world success.</p>
-                <p class="text-muted mb-4">Our mission is to democratize learning—bringing world-class education to everyone, everywhere. Whether you're upskilling or starting fresh, Code Bloom is your trusted partner in growth.</p>
+                <p class="text-muted mb-4">At Code Bloom, we’re reshaping online education by making it flexible,
+                    innovative, and learner-centered. With personalized paths and expert instructors, we guide you to
+                    real-world success.</p>
+                <p class="text-muted mb-4">Our mission is to democratize learning—bringing world-class education to
+                    everyone, everywhere. Whether you're upskilling or starting fresh, Code Bloom is your trusted
+                    partner in growth.</p>
                 <div class="row gy-2 gx-4 mb-4 text-muted">
-                    <div class="col-sm-6"><p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Industry Experts</p></div>
-                    <div class="col-sm-6"><p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Live Classrooms</p></div>
-                    <div class="col-sm-6"><p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>All-Inclusive Course Range</p></div>
-                    <div class="col-sm-6"><p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Interactive Community</p></div>
-                    <div class="col-sm-6"><p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Tailored Learning Plans</p></div>
-                    <div class="col-sm-6"><p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Verified Credentials</p></div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Industry Experts</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Live Classrooms</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>All-Inclusive Course Range
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Interactive Community</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Tailored Learning Plans</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-check-circle text-primary me-2"></i>Verified Credentials</p>
+                    </div>
                 </div>
                 <a class="btn btn-primary text-light py-3 px-5 mt-2" href="{% url 'about' %}">More About Us</a>
             </div>
@@ -136,11 +197,15 @@
                 <p class="mb-4">Start your online learning journey at Great Learning Academy for free with our
                     short-term basic courses across various in-demand domains.</p>
 
-                <a class="btn text-light py-3 px-5 mt-2" href="{% url "signup" %}">Start For Free</a>
+                {% if user.is_authenticated %}
+                <a class="btn text-light py-3 px-5 mt-2" href="{% url 'courses' %}">Start For Free</a>
+                {% else %}
+                <a class="btn text-light py-3 px-5 mt-2" href="{% url 'signup' %}">Start For Free</a>
+                {% endif %}
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="{% static "banner-1.jpg" %}" alt=""
+                    <img class="img-fluid position-absolute w-100 h-100" src="{% static 'banner-1.jpg' %}" alt=""
                         style="object-fit: cover;">
                 </div>
             </div>
@@ -161,80 +226,80 @@
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat1.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat1.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center">Microsoft Excel</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/introduction-to-ms-excel/" class="text-center">Microsoft Excel</a>
                     </h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat2.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat2.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center"> AWS</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/introduction-to-amazon-web-services/" class="text-center"> AWS</a>
                     </h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat3.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat3.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center">Python</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/python-programming-language-tutorial/" class="text-center">Python</a>
                     </h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat4.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat4.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center">Java</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/java/" class="text-center">Java</a>
                     </h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat5.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat5.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center">Web Design</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/web-design/" class="text-center">Web Design</a>
                     </h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat6.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat6.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center">Web Development</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/web-development/" class="text-center">Web Development</a>
                     </h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat7.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat7.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center">MySQL</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/mysql-tutorial/" class="text-center">MySQL</a>
                     </h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  text-center">
                 <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <img src="{% static "cat8.png" %}" class="img-fluid" alt="categories"></i>
+                    <img src="{% static 'cat8.png' %}" class="img-fluid" alt="categories"></i>
 
                     <h5 class="my-2">
-                        <a href="#" class="text-center">UI/UX Design</a>
+                        <a target="_blank" href="https://www.geeksforgeeks.org/principles-of-ui-ux-design/" class="text-center">UI/UX Design</a>
                     </h5>
                 </div>
             </div>
@@ -255,14 +320,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-1.jpg" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-1.jpg' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1"><a href="{% url "single" %}" class="text-dark">HTML Course for Beginners </a>
+                        <h5 class="mb-1"><a href="{% url 'single' %}" class="text-dark">HTML Course for Beginners </a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -285,14 +350,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-2.jpg" %}" alt="">
-                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                        <img class="img-fluid" src="{% static 'course-2.jpg' %}" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">Front End Development-CSS
+                        <h5 class="mb-1"><a href="{% url 'single2' %}" class="text-dark">Front End Development-CSS</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -306,7 +371,7 @@
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0
                             Hrs</small>
-                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                         <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
                                 Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
                     </div>
@@ -315,14 +380,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-3.jpg" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-3.jpg' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">Introduction to JavaScript
+                        <h5 class="mb-1"><a href="{% url 'single3' %}" class="text-dark">Introduction to JavaScript</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -345,14 +410,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-4.jpg" %}" alt="">
-                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                        <img class="img-fluid" src="{% static 'course-4.jpg' %}" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">Python Programming
+                        <h5 class="mb-1"><a href="{% url 'single4' %}" class="text-dark">Python Programming</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -366,7 +431,7 @@
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
                             Hrs</small>
-                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                         <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
                                 Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
                     </div>
@@ -375,14 +440,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-5.jpg" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-5.jpg' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">SQL for Data Science
+                        <h5 class="mb-1"><a href="{% url 'single5' %}" class="text-dark">SQL for Data Science</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -406,14 +471,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-6.jpg" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-6.jpg' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">ChatGPT for Beginners
+                        <h5 class="mb-1"><a href="{% url 'single6' %}" class="text-dark">ChatGPT for Beginners</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -436,14 +501,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-7.jpg" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-7.jpg' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">AWS for Beginners
+                        <h5 class="mb-1"><a href="{% url 'single7' %}" class="text-dark">AWS for Beginners</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -466,14 +531,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-8.jpg" %}" alt="">
-                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                        <img class="img-fluid" src="{% static 'course-8.jpg' %}" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">Microsoft Azure Essentials
+                        <h5 class="mb-1"><a href="{% url 'single8' %}" class="text-dark">Microsoft Azure Essentials</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -488,7 +553,7 @@
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.5
                             Hrs</small>
-                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 149</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                         <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
                                 Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
                     </div>
@@ -497,14 +562,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-9.jpg" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-9.jpg' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">Introduction to MS Excel</h5>
+                        <h5 class="mb-1"><a href="{% url 'single9' %}" class="text-dark">Introduction to MS Excel</a></h5>
                     </div>
                     <div class="d-flex">
                         <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
@@ -526,14 +591,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-10.jpg" %}" alt="">
-                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                        <img class="img-fluid" src="{% static 'course-10.jpg' %}" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">Statistics For Data Science
+                        <h5 class="mb-1"><a href="{% url 'single10' %}" class="text-dark">Statistics For Data Science</a>
 
 
                         </h5>
@@ -550,7 +615,7 @@
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
                             Hrs</small>
-                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                         <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
                                 Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
                     </div>
@@ -559,14 +624,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-11.jpg" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-11.jpg' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">Java Programming
+                        <h5 class="mb-1"><a href="{% url 'single11' %}" class="text-dark">Java Programming</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -589,14 +654,14 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="{% static "course-12.png" %}" alt="">
+                        <img class="img-fluid" src="{% static 'course-12.png' %}" alt="">
                         <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                             class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                     </div>
                     <div class="p-2 pb-0">
 
-                        <h5 class="mb-1">C for Beginners
+                        <h5 class="mb-1"><a href="{% url 'single12' %}" class="text-dark">C for Beginners</a>
                         </h5>
                     </div>
                     <div class="d-flex">
@@ -621,29 +686,30 @@
     </div>
 </div>
 <div class="container text-center">
-    <a class="btn text-light py-3 px-5 mt-2 mb-5" href="{% url "courses" %}">All Courses</a>
+    <a class="btn text-light py-3 px-5 mt-2 mb-5" href="{% url 'courses' %}">All Courses</a>
 </div>
 <!-- Courses End -->
 
 
 <!-- Banner-2 Start -->
-<section class="pb-5" style="background: url('{% static "banner-3.jpg" %}') no-repeat center center/cover;">
-    <div class="container-xxl mt-5">
+<section style="background-color:goldenrod;">
+        <div class="container-xxl mt-5">
         <div class="container">
             <div class="row g-5">
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100 bg-light"
-                             src="{% static "banner-2.png" %}"
-                             alt="Instructor" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100 bg-light" src="{% static 'banner-2.png' %}"
+                            alt="Instructor" style="object-fit: cover;">
                     </div>
                 </div>
 
                 <div class="col-lg-6 p-5 wow fadeInUp" data-wow-delay="0.3s">
-                    <h1 class="mb-4" style="color: #fb873f;">Share Your Expertise</h1>
+                    <h1 class="mb-4" style="color: #ee6109;">Share Your Expertise</h1>
                     <p class="mb-4 text-white">
-                        Inspire learners across the globe by becoming an instructor. Join a community of passionate educators and leverage our platform to deliver impactful courses. We'll provide you with the tools, support, and audience to help you succeed.
+                        Inspire learners across the globe by becoming an instructor. Join a community of passionate
+                        educators and leverage our platform to deliver impactful courses. We'll provide you with the
+                        tools, support, and audience to help you succeed.
                     </p>
                     <a class="btn btn-warning text-light py-3 mt-2" href="{% url 'instructor' %}">
                         Start Your Teaching Journey
@@ -672,9 +738,14 @@
                                 What is Code Bloom?
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Code Bloom is an innovative platform offering over 1000 free online courses across cutting-edge technologies. With more than 5 million learners globally, we provide in-depth learning experiences in Data Science, Machine Learning, Artificial Intelligence, Cloud Computing, Software Development, Business Development, Digital Marketing, Big Data, and much more.
+                                Code Bloom is an innovative platform offering over 1000 free online courses across
+                                cutting-edge technologies. With more than 5 million learners globally, we provide
+                                in-depth learning experiences in Data Science, Machine Learning, Artificial
+                                Intelligence, Cloud Computing, Software Development, Business Development, Digital
+                                Marketing, Big Data, and much more.
                             </div>
                         </div>
                     </div>
@@ -687,7 +758,10 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Great Learning Academy offers an exceptional selection of free courses that come with valuable certificates. The courses are thoughtfully designed to offer an immersive learning experience, interactive content, and practical skills that are aligned with current industry standards, making it a top choice for career development.
+                                Great Learning Academy offers an exceptional selection of free courses that come with
+                                valuable certificates. The courses are thoughtfully designed to offer an immersive
+                                learning experience, interactive content, and practical skills that are aligned with
+                                current industry standards, making it a top choice for career development.
                             </div>
                         </div>
                     </div>
@@ -700,7 +774,8 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                At Code Bloom, you have the flexibility to enroll in multiple courses simultaneously, allowing you to tailor your learning experience to meet your professional needs.
+                                At Code Bloom, you have the flexibility to enroll in multiple courses simultaneously,
+                                allowing you to tailor your learning experience to meet your professional needs.
                             </div>
                         </div>
                     </div>
@@ -713,7 +788,8 @@
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Enrolling in our courses is easy. Simply click on the “Sign Up” button located at the top-right of the page to register with your email, or sign up using your Google Account.
+                                Enrolling in our courses is easy. Simply click on the “Sign Up” button located at the
+                                top-right of the page to register with your email, or sign up using your Google Account.
                             </div>
                         </div>
                     </div>
@@ -726,7 +802,9 @@
                         </h2>
                         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Code Bloom specializes in providing courses on high-demand skills, ensuring that learners gain relevant expertise in their fields. Our offerings are designed to support learners in reaching their professional goals.
+                                Code Bloom specializes in providing courses on high-demand skills, ensuring that
+                                learners gain relevant expertise in their fields. Our offerings are designed to support
+                                learners in reaching their professional goals.
 
                                 <p>Some of the most sought-after free courses available at Code Bloom include:</p>
                                 <ul>

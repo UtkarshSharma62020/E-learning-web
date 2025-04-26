@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
-from Contact.models import User_Contact
-from django.contrib.auth.decorators import login_required
+from Contact.models import Instructor_Contact, User_Contact
 
 
 def home(request):
@@ -36,7 +35,35 @@ def courses(request):
     return render(request,'courses.html')
 
 def instructor(request):
-    return render(request,'instructor.html')
+    if request.method == 'POST':
+        first_name = request.POST.get('f_name')
+        last_name = request.POST.get('l_name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        degree = request.POST.get('degree')
+        subject = request.POST.get('subject')
+        address = request.POST.get('address')
+        terms_accepted = request.POST.get('terms_accepted') == 'on'  # Checkbox returns 'on' if checked
+
+        if not terms_accepted:
+            messages.error(request, "You must accept the terms and conditions.")
+            return redirect('instructor')
+
+        Instructor_Contact.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            phone=phone,
+            degree=degree,
+            subject=subject,
+            address=address,
+            terms_accepted=terms_accepted
+        )
+        messages.success(request, "Your application has been submitted successfully, We will reach out soon!")
+        return redirect('instructor')  # Redirect to the same page or thank you page
+
+    return render(request, 'instructor.html')
+
 
 def login(request):
     if request.method == 'POST':
@@ -79,6 +106,39 @@ def signup(request):
 
 def single(request):
     return render(request,'single.html')
+
+def single2(request):
+    return render(request,'single2.html')
+
+def single3(request):
+    return render(request,'single3.html')
+
+def single4(request):
+    return render(request,'single4.html')
+
+def single5(request):
+    return render(request,'single5.html')
+
+def single6(request):
+    return render(request,'single6.html')
+
+def single7(request):
+    return render(request,'single7.html')
+
+def single8(request):
+    return render(request,'single8.html')
+
+def single9(request):
+    return render(request,'single9.html')
+
+def single10(request):
+    return render(request,'single10.html')
+
+def single11(request):
+    return render(request,'single11.html')
+
+def single12(request):
+    return render(request,'single12.html')
 
 def team(request):
     return render(request,'team.html')
