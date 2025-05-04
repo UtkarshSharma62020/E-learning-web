@@ -1,8 +1,102 @@
+import json
+import stripe # type: ignore
+from django.conf import settings
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib import messages
-from Contact.models import Instructor_Contact, User_Contact
+from Contact.models import Instructor_Contact, User_Contact, Payment
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+@csrf_exempt
+@login_required
+def create_checkout_session(request):
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+    course_name = request.POST.get('course_name', 'Course Enrollment')
+    amount_cents = int(request.POST.get('amount', 0))
+
+    try:
+        # 1) create the Stripe Checkout Session
+        session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            line_items=[{
+                'price_data': {
+                    'currency': 'usd',
+                    'product_data': {'name': course_name},
+                    'unit_amount': amount_cents,
+                },
+                'quantity': 1,
+            }],
+            mode='payment',
+            customer_email=request.user.email,
+            success_url=request.build_absolute_uri(
+                f"/payment-success/?session_id={{CHECKOUT_SESSION_ID}}"
+            ),
+            cancel_url=request.build_absolute_uri("/payment-cancelled/"),
+        )
+
+        # 2) record the session.id (or .payment_intent) immediately
+        Payment.objects.create(
+            user=request.user,
+            course_name=course_name,
+            amount=amount_cents/100,  # convert to dollars
+            payment_intent_id=session.id,  # save Checkout Session ID
+            status='Pending',
+        )
+
+        return JsonResponse({'id': session.id})
+
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+
+# views.py (continued)
+
+def payment_success(request):
+    session_id = request.GET.get('session_id')
+    if not session_id:
+        return render(request, 'payment_success.html', {'error': 'No session ID.'})
+
+    # retrieve the checkout session
+    session = stripe.checkout.Session.retrieve(session_id)
+    intent_id = session.payment_intent  # this is the actual PaymentIntent ID
+
+    # update our DB record
+    try:
+        payment = Payment.objects.get(payment_intent_id=session_id)
+        payment.payment_intent_id = intent_id  # replace cs_… with pi_…
+        payment.status = 'Succeeded'
+        payment.save()
+    except Payment.DoesNotExist:
+        # (optional) handle missing record
+        pass
+
+    return render(request, 'payment_success.html')
+
+
+def payment_cancelled(request):
+    return render(request, 'payment_cancelled.html')
+
+
+@csrf_exempt
+@login_required
+def enroll_free_course(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        course_id = data.get('course_id')
+        course_name = data.get('course_name')
+
+        # Save enrollment in your model (optional)
+        # UserCourse.objects.get_or_create(user=request.user, course_id=course_id)
+
+        return JsonResponse({'status': 'enrolled'})
+    return JsonResponse({'error': 'Invalid request'}, status=400)
 
 
 def home(request):

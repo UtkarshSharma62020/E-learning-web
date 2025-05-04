@@ -160,6 +160,56 @@
     <script src="{% static 'waypoints_min.js' %}"></script>
     <script src="{% static 'wow_min.js' %}"></script>
     <script src="{% static 'main.js' %}"></script>
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      document.querySelectorAll('form[id^="payment-form"]').forEach(form => {
+        form.addEventListener('submit', async e => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const response = await fetch("{% url 'create_checkout_session' %}", {
+            method: 'POST',
+            headers: { 'X-CSRFToken': formData.get('csrfmiddlewaretoken') },
+            body: formData
+          });
+          const data = await response.json();
+          if (data.id) {
+            const stripe = Stripe("{{ STRIPE_PUBLISHABLE_KEY }}");
+            stripe.redirectToCheckout({ sessionId: data.id });
+          } else {
+            alert('Unable to start payment.');
+          }
+        });
+      });
+    </script>
+
+    <!-- JavaScript to handle free course enrollment -->
+<script>
+    function enrollFreeCourse(courseId, courseName) {
+    fetch('/enroll-free-course/', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+       'X-CSRFToken': '{{ csrf_token }}',
+     },
+     body: JSON.stringify({
+       course_id: courseId,
+       course_name: courseName,
+     }),
+    })
+    .then(response => {
+     if (response.ok) {
+       alert("You have successfully enrolled!");
+     } else {
+       alert("Something went wrong. Please try again.");
+     }
+    })
+    .catch(error => {
+     console.error("Error:", error);
+     alert("Enrollment failed. Check your internet or console.");
+    });
+    }
+    </script>
 
 
 </body>

@@ -42,4 +42,8 @@ urlpatterns = [
     path('team/',views.team,name='team'),
     path('testimonial/',views.testimonial,name='testimonial'),
     path('logout/', views.logout, name='logout'),
+    path('create-checkout-session/', views.create_checkout_session, name='create_checkout_session'),
+    path('payment-success/', views.payment_success, name='payment_success'),
+    path('payment-cancelled/', views.payment_cancelled, name='payment_cancelled'),
+    path('enroll-free-course/', views.enroll_free_course, name='enroll_free_course'),
 ]
