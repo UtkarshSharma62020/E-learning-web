@@ -3,24 +3,24 @@
 
 {% block content %}
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">Course</h1>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a class="text-white" href="{% url "home" %}">Home</a></li>
-                                <li class="breadcrumb-item"><a class="text-white" href="{% url "courses" %}">Course</a></li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">HTML Course for Beginners</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">Course</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url "home" %}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="{% url "courses" %}">Course</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">HTML Course for Beginners</li>
+                    </ol>
+                </nav>
             </div>
+        </div>
     </div>
-    <!-- Header End -->
+</div>
+<!-- Header End -->
 
 
 <!-- Course Detail Start -->
@@ -33,16 +33,20 @@
                     <div class="row g-5 justify-content-center">
                         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
                             <h2 style="color: #1d3557;">HTML Course for Beginners</h2>
-                            <p style="color: #333;">Start at the beginning by learning HTML basics — an important foundation for building and editing web pages.</p>
+                            <p style="color: #333;">Start at the beginning by learning HTML basics — an important
+                                foundation for building and editing web pages.</p>
                             <div class="d-flex" style="color: #555;">
                                 <small><i class="fa fa-star text-warning"></i> 4.6</small>
-                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 5.8L+ Learners</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 5.8L+
+                                    Learners</small>
                                 <small style="margin-left: 15px;"><i class="fa fa-user"></i> Beginner</small>
                                 <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> 2.0 Hrs</small>
                             </div>
                             <div class="image-div text-left mt-3">
-                                <img src="{% static 'testimonial-2.jpg' %}" alt="" style="height: 40px; width: 40px; border-radius: 50%;">
-                                <span style="margin-left: 10px; color: #1d3557;"><b>Instructor Name</b> - Zoe Bachman</span>
+                                <img src="{% static 'testimonial-2.jpg' %}" alt=""
+                                    style="height: 40px; width: 40px; border-radius: 50%;">
+                                <span style="margin-left: 10px; color: #1d3557;"><b>Instructor Name</b> - Zoe
+                                    Bachman</span>
                             </div>
                         </div>
                     </div>
@@ -52,13 +56,17 @@
                     <div class="tab-content mt-4">
                         <div class="tab-pane container active" id="Overview">
                             <h2 style="color: #1d3557;">About this Course</h2>
-                            <p style="color: #333;">Fun fact: all websites use HTML — even this one. It's a fundamental part of every web developer's toolkit...</p>
+                            <p style="color: #333;">Fun fact: all websites use HTML — even this one. It's a fundamental
+                                part of every web developer's toolkit...</p>
 
                             <h2 class="mt-4" style="color: #1d3557;">Skills you'll gain</h2>
 
-                            <span style="font-size: 15px; font-weight: normal; background-color: #457b9d; color: white;" class="badge rounded-pill px-4 py-2 m-2">Structure pages with HTML</span>
-                            <span style="font-size: 15px; font-weight: normal; background-color: #457b9d; color: white;" class="badge rounded-pill px-4 py-2 m-2">Present data with tables</span>
-                            <span style="font-size: 15px; font-weight: normal; background-color: #457b9d; color: white;" class="badge rounded-pill px-4 py-2 m-2">Write cleaner HTML</span>
+                            <span style="font-size: 15px; font-weight: normal; background-color: #457b9d; color: white;"
+                                class="badge rounded-pill px-4 py-2 m-2">Structure pages with HTML</span>
+                            <span style="font-size: 15px; font-weight: normal; background-color: #457b9d; color: white;"
+                                class="badge rounded-pill px-4 py-2 m-2">Present data with tables</span>
+                            <span style="font-size: 15px; font-weight: normal; background-color: #457b9d; color: white;"
+                                class="badge rounded-pill px-4 py-2 m-2">Write cleaner HTML</span>
                         </div>
 
                         <div class="container" id="Curriculum">
@@ -68,16 +76,25 @@
                                 <!-- Repeated Accordion Items with Style -->
                                 <div class="accordion-item" style="background-color: #f1f5f9;">
                                     <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseOne" style="color: #1d3557;">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            style="color: #1d3557;">
                                             Elements and Structure
                                         </button>
                                     </h2>
                                     <div id="flush-collapseOne" class="accordion-collapse collapse">
                                         <div class="accordion-body">
                                             <ul style="list-style-type: none; padding-left: 0; color: #333;">
-                                                <li><i class="fa fa-video text-danger"></i> Introduction to HTML</li>
-                                                <li><i class="fa fa-video text-danger"></i> HTML Document Standards</li>
+                                                <li><i class="fa fa-video text-danger"></i> <a
+                                                        href="https://www.youtube.com/watch?v=UB1O30fR-EE"
+                                                        target="_blank"
+                                                        style="color: inherit; text-decoration: none;">Introduction to
+                                                        HTML</a></li>
+                                                <li><i class="fa fa-video text-danger"></i> <a
+                                                        href="https://www.youtube.com/watch?v=G3e-cpL7ofc"
+                                                        target="_blank"
+                                                        style="color: inherit; text-decoration: none;">HTML Document
+                                                        Standards</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -86,15 +103,20 @@
                                 <!-- Tables Section -->
                                 <div class="accordion-item" style="background-color: #f1f5f9;">
                                     <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseTwo" style="color: #1d3557;">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            style="color: #1d3557;">
                                             Tables
                                         </button>
                                     </h2>
                                     <div id="flush-collapseTwo" class="accordion-collapse collapse">
                                         <div class="accordion-body">
                                             <ul style="list-style-type: none; padding-left: 0; color: #333;">
-                                                <li><i class="fa fa-video text-danger"></i> HTML Tables</li>
+                                                <li><i class="fa fa-video text-danger"></i> <a
+                                                        href="https://www.youtube.com/watch?v=JfG3Wq8uN4Y"
+                                                        target="_blank"
+                                                        style="color: inherit; text-decoration: none;">HTML Tables</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -103,16 +125,25 @@
                                 <!-- Forms Section -->
                                 <div class="accordion-item" style="background-color: #f1f5f9;">
                                     <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseThree" style="color: #1d3557;">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            style="color: #1d3557;">
                                             Forms
                                         </button>
                                     </h2>
                                     <div id="flush-collapseThree" class="accordion-collapse collapse">
                                         <div class="accordion-body">
                                             <ul style="list-style-type: none; padding-left: 0; color: #333;">
-                                                <li><i class="fa fa-video text-danger"></i> HTML Forms</li>
-                                                <li><i class="fa fa-video text-danger"></i> Form Validation</li>
+                                                <li><i class="fa fa-video text-danger"></i> <a
+                                                        href="https://www.youtube.com/watch?v=9YffrCViTVk"
+                                                        target="_blank"
+                                                        style="color: inherit; text-decoration: none;">HTML Forms</a>
+                                                </li>
+                                                <li><i class="fa fa-video text-danger"></i> <a
+                                                        href="https://www.youtube.com/watch?v=K8YELRmUb5o"
+                                                        target="_blank"
+                                                        style="color: inherit; text-decoration: none;">Form
+                                                        Validation</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -121,19 +152,25 @@
                                 <!-- Semantic HTML Section -->
                                 <div class="accordion-item" style="background-color: #f1f5f9;">
                                     <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseFour" style="color: #1d3557;">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                            style="color: #1d3557;">
                                             Semantic HTML
                                         </button>
                                     </h2>
                                     <div id="flush-collapseFour" class="accordion-collapse collapse">
                                         <div class="accordion-body">
                                             <ul style="list-style-type: none; padding-left: 0; color: #333;">
-                                                <li><i class="fa fa-video text-danger"></i> Semantic HTML</li>
+                                                <li><i class="fa fa-video text-danger"></i> <a
+                                                        href="https://www.youtube.com/watch?v=GivZzK2e5DY"
+                                                        target="_blank"
+                                                        style="color: inherit; text-decoration: none;">Semantic HTML</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
+
 
                             </div>
                         </div>
@@ -144,7 +181,8 @@
                             <div class="image-div text-left mt-4">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-6">
-                                        <img src="{% static 'testimonial-2.jpg' %}" alt="" style="height: 150px; width: 150px; border-radius: 50%;">
+                                        <img src="{% static 'testimonial-2.jpg' %}" alt=""
+                                            style="height: 150px; width: 150px; border-radius: 50%;">
                                     </div>
                                     <div class="col-lg-9 col-md-6 mt-2">
                                         <h5 style="color: #1d3557;">Zoe Bachman</h5>
@@ -177,50 +215,68 @@
             </div>
 
             <!-- Right Sidebar -->
-<div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s"
-style="background-color: #ffffff; border-radius: 8px;">
-<div class="image text-center">
-   <img class="img-fluid mt-2" src="{% static 'course-1.jpg' %}" alt=""
-        style="max-height: 200px; width: 100%; object-fit: cover;">
-</div>
+            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s"
+                style="background-color: #ffffff; border-radius: 8px;">
+                <div class="image text-center">
+                    <img class="img-fluid mt-2" src="{% static 'course-1.jpg' %}" alt=""
+                        style="max-height: 200px; width: 100%; object-fit: cover;">
+                </div>
 
-<h4 class="mt-2 p-2 text-center" style="color: #2a9d8f;">Free</h4>
-<h4 class="mt-2 p-2 text-center" style="color: #e63946;">
-   Rs. <small><del>1,100</del></small>
-</h4>
+                <h4 class="mt-2 p-2 text-center" style="color: #2a9d8f;">Free</h4>
+                <h4 class="mt-2 p-2 text-center" style="color: #e63946;">
+                    Rs. <small><del>1,100</del></small>
+                </h4>
 
-<div class="buttons px-3">
-    {% if user.is_authenticated %}
-    <a href="#" 
-       id="enroll-btn-html_course"
-       class="text-decoration-none text-white btn w-100 mb-2"
-       style="background-color: #1d3557;"
-       onclick="enrollFreeCourse('', '', this); return false;">
-       ENROLL NOW
-    </a>
-    {% else %}
-    <a href="{% url 'login' %}?next={{ request.path }}"
-       class="text-decoration-none text-white btn w-100 mb-2"
-       style="background-color: #1d3557;">
-       LOGIN TO ENROLL
-    </a>
-    {% endif %}
-  </div>
-  
+                <div class="buttons px-3">
+                    {% if user.is_authenticated %}
+                    <a href="#" id="enroll-btn-html_course" class="text-decoration-none text-white btn w-100 mb-2"
+                        style="background-color: #1d3557;" onclick="enrollFreeCourse('', '', this); return false;">
+                        ENROLL NOW
+                    </a>
+                    {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}"
+                        class="text-decoration-none text-white btn w-100 mb-2" style="background-color: #1d3557;">
+                        LOGIN TO ENROLL
+                    </a>
+                    {% endif %}
+                </div>
 
-<div class="list mt-2 px-3">
-   <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-clock"></i> Duration</p><p>2.0 Hrs</p></div>
-   <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-book"></i> Lectures</p><p>4</p></div>
-   <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-bolt"></i> Enrolled</p><p>240 students</p></div>
-   <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-google-translate"></i> Language</p><p>English</p></div>
-   <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Skill Level</p><p>Beginner</p></div>
-   <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-list"></i> Deadline</p><p>Life Time</p></div>
-   <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-certificate"></i> Certificate</p><p>Yes</p></div>
-   <div class="text-center mt-4 mb-4">
-       <i class="fa fa-share"></i> <a href="#" style="text-decoration: none; color: #1d3557;">Share this Course</a>
-   </div>
-</div>
-</div>
+
+                <div class="list mt-2 px-3">
+                    <div class="d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-clock"></i> Duration</p>
+                        <p>2.0 Hrs</p>
+                    </div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-book"></i> Lectures</p>
+                        <p>4</p>
+                    </div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-bolt"></i> Enrolled</p>
+                        <p>240 students</p>
+                    </div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-google-translate"></i> Language</p>
+                        <p>English</p>
+                    </div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-list"></i> Skill Level</p>
+                        <p>Beginner</p>
+                    </div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-list"></i> Deadline</p>
+                        <p>Life Time</p>
+                    </div>
+                    <div class="d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-certificate"></i> Certificate</p>
+                        <p>Yes</p>
+                    </div>
+                    <div class="text-center mt-4 mb-4">
+                        <i class="fa fa-share"></i> <a href="#" style="text-decoration: none; color: #1d3557;">Share
+                            this Course</a>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
