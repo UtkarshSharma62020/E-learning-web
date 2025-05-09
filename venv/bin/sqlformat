@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/utkarsh/Downloads/E-learning web/venv/bin/python3" "$0" "$@"
-' '''
+#!/home/utkarsh/Pictures/E-learning-web/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

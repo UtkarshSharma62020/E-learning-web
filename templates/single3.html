@@ -180,19 +180,21 @@
 
                 <div class="buttons px-3">
                     {% if user.is_authenticated %}
-   <a href="#" class="text-decoration-none text-white btn w-100 mb-2"
-      style="background-color: #1d3557;"
-      onclick="enrollFreeCourse('J_s', 'Introduction to JavaScript'); return false;">
-      ENROLL NOW
-   </a>
-   {% else %}
-   <a href="{% url 'login' %}?next={{ request.path }}"
-      class="text-decoration-none text-white btn w-100 mb-2"
-      style="background-color: #1d3557;">
-      LOGIN TO ENROLL
-   </a>
-   {% endif %}
-                </div>
+                    <a href="#" 
+                       id="enroll-btn-html_course"
+                       class="text-decoration-none text-white btn w-100 mb-2"
+                       style="background-color: #1d3557;"
+                       onclick="enrollFreeCourse('', '', this); return false;">
+                       ENROLL NOW
+                    </a>
+                    {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}"
+                       class="text-decoration-none text-white btn w-100 mb-2"
+                       style="background-color: #1d3557;">
+                       LOGIN TO ENROLL
+                    </a>
+                    {% endif %}
+                  </div>
 
                 <div class="list mt-2 px-3">
                     <div class="d-flex justify-content-between pt-2 border-bottom"><p><i class="fa fa-clock"></i> Duration</p><p>3 Hrs</p></div>

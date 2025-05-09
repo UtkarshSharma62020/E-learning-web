@@ -324,25 +324,33 @@
             <h1 class="mb-5" style="color: #fb873f;">Explore new and trending free online courses</h1>
         </div>
         <div class="row g-4 py-2">
-            <!-- Course 1: Free -->
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+             <!-- Course 1: Free -->
+             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
                         <img class="img-fluid" src="{% static 'course-1.jpg' %}" alt="HTML Course">
-                        <div class="px-2 py-1 fw-bold text-uppercase" style="position:absolute; top:15px; left:16px; background-color:#fb873f; font-size:12px; border-radius:3px;">FREE</div>
+                        <div class="px-2 py-1 fw-bold text-uppercase"
+                            style="position:absolute; top:15px; left:16px; background-color:#fb873f; font-size:12px; border-radius:3px;">
+                            FREE</div>
                     </div>
                     <div class="p-2 pb-0">
-                        <h5 class="mb-1"><a href="{% url 'single' %}" class="text-dark">HTML Course for Beginners</a></h5>
+                        <h5 class="mb-1"><a href="{% url 'single' %}" class="text-dark">HTML Course for Beginners</a>
+                        </h5>
                     </div>
                     <div class="d-flex">
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.8L+ Learners</small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-star text-warning me-2"></i>4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.8L+
+                            Learners</small>
                         <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user me-2"></i>Beginner</small>
                     </div>
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0 Hrs</small>
                         <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="{% url 'single' %}">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
+                            <a
+                                href="{% url 'single' %}">Enroll Now</a><i
+                                class="fa fa-chevron-right me-2 fs-10"></i></small>
                     </div>
                 </div>
             </div>
@@ -351,31 +359,29 @@
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
                         <img class="img-fluid" src="{% static 'course-2.jpg' %}" alt="CSS Course">
-                        <div class="px-2 py-1 fw-bold text-uppercase" style="position:absolute; top:15px; left:16px; background-color:#0ed44c; font-size:12px; border-radius:3px;">PAID</div>
+                        <div class="px-2 py-1 fw-bold text-uppercase"
+                            style="position:absolute; top:15px; left:16px; background-color:#0ed44c; font-size:12px; border-radius:3px;">
+                            PAID</div>
                     </div>
                     <div class="p-2 pb-0">
-                        <h5 class="mb-1"><a href="{% url 'single2' %}" class="text-dark">Front End Development - CSS</a></h5>
+                        <h5 class="mb-1"><a href="{% url 'single2' %}" class="text-dark">Front End Development - CSS</a>
+                        </h5>
                     </div>
                     <div class="d-flex">
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.2L+ Learners</small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-star text-warning me-2"></i>4.55</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.2L+
+                            Learners</small>
                         <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user me-2"></i>Beginner</small>
                     </div>
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
                         <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
                         <small class="py-1 px-2 fw-bold fs-6 text-center" style="float:right;">
-                            {% if user.is_authenticated %}
-                            <form id="payment-form-css" method="POST">
-                                {% csrf_token %}
-                                <input type="hidden" name="course_name" value="Front End Development - CSS">
-                                <input type="hidden" name="amount" value="19900">
-                                <button type="submit" class="btn btn-success btn-sm">Enroll Now</button>
-                            </form>
-                            {% else %}
-                            <a href="{% url 'login' %}" class="btn btn-warning btn-sm">Login to Enroll</a>
-                            {% endif %}
-                        </small>
+                            <a
+                                href="{% url 'single2' %}">Enroll Now</a><i
+                                class="fa fa-chevron-right me-2 fs-10"></i>
+                            </small>
                     </div>
                 </div>
             </div>
@@ -384,20 +390,27 @@
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
                         <img class="img-fluid" src="{% static 'course-3.jpg' %}" alt="JavaScript Course">
-                        <div class="px-2 py-1 fw-bold text-uppercase" style="position:absolute; top:15px; left:16px; background-color:#fb873f; font-size:12px; border-radius:3px;">FREE</div>
+                        <div class="px-2 py-1 fw-bold text-uppercase"
+                            style="position:absolute; top:15px; left:16px; background-color:#fb873f; font-size:12px; border-radius:3px;">
+                            FREE</div>
                     </div>
                     <div class="p-2 pb-0">
-                        <h5 class="mb-1"><a href="{% url 'single3' %}" class="text-dark">Introduction to JavaScript</a></h5>
+                        <h5 class="mb-1"><a href="{% url 'single3' %}" class="text-dark">Introduction to JavaScript</a>
+                        </h5>
                     </div>
                     <div class="d-flex">
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>4.46</small>
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>76L+ Learners</small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-star text-warning me-2"></i>4.46</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>76L+
+                            Learners</small>
                         <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user me-2"></i>Beginner</small>
                     </div>
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5 Hrs</small>
                         <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="{% url 'single3' %}">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <small class="text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a
+                                href="{% url 'single3' %}">Enroll Now</a><i
+                                class="fa fa-chevron-right me-2 fs-10"></i></small>
                     </div>
                 </div>
             </div>
@@ -406,30 +419,27 @@
                 <div class="course-item shadow">
                     <div class="position-relative overflow-hidden text-light image">
                         <img class="img-fluid" src="{% static 'course-4.jpg' %}" alt="Python Course">
-                        <div class="px-2 py-1 fw-bold text-uppercase" style="position:absolute; top:15px; left:16px; background-color:#0ed44c; font-size:12px; border-radius:3px;">PAID</div>
+                        <div class="px-2 py-1 fw-bold text-uppercase"
+                            style="position:absolute; top:15px; left:16px; background-color:#0ed44c; font-size:12px; border-radius:3px;">
+                            PAID</div>
                     </div>
                     <div class="p-2 pb-0">
                         <h5 class="mb-1"><a href="{% url 'single4' %}" class="text-dark">Python Programming</a></h5>
                     </div>
                     <div class="d-flex">
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>3.54</small>
-                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3.3L+ Learners</small>
+                        <small class="flex-fill text-center py-1 px-2"><i
+                                class="fa fa-star text-warning me-2"></i>3.54</small>
+                        <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3.3L+
+                            Learners</small>
                         <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user me-2"></i>Beginner</small>
                     </div>
                     <div class="d-flex">
                         <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0 Hrs</small>
                         <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
                         <small class="py-1 px-2 fw-bold fs-6 text-center" style="float:right;">
-                            {% if user.is_authenticated %}
-                            <form id="payment-form-python" method="POST">
-                                {% csrf_token %}
-                                <input type="hidden" name="course_name" value="Python Programming">
-                                <input type="hidden" name="amount" value="29900">
-                                <button type="submit" class="btn btn-success btn-sm">Enroll Now</button>
-                            </form>
-                            {% else %}
-                            <a href="{% url 'login' %}" class="btn btn-warning btn-sm">Login to Enroll</a>
-                            {% endif %}
+                            <a
+                            href="{% url 'single4' %}">Enroll Now</a><i
+                            class="fa fa-chevron-right me-2 fs-10"></i>
                         </small>
                     </div>
                 </div>

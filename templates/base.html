@@ -184,32 +184,40 @@
     </script>
 
     <!-- JavaScript to handle free course enrollment -->
-<script>
-    function enrollFreeCourse(courseId, courseName) {
-    fetch('/enroll-free-course/', {
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/json',
-       'X-CSRFToken': '{{ csrf_token }}',
-     },
-     body: JSON.stringify({
-       course_id: courseId,
-       course_name: courseName,
-     }),
-    })
-    .then(response => {
-     if (response.ok) {
-       alert("You have successfully enrolled!");
-     } else {
-       alert("Something went wrong. Please try again.");
-     }
-    })
-    .catch(error => {
-     console.error("Error:", error);
-     alert("Enrollment failed. Check your internet or console.");
-    });
-    }
-    </script>
+    <script>
+        function enrollFreeCourse(courseId, courseName, btnElement) {
+          fetch('/enroll-free-course/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-CSRFToken': '{{ csrf_token }}',
+            },
+            body: JSON.stringify({
+              course_id: courseId,
+              course_name: courseName,
+            }),
+          })
+          .then(response => {
+            if (response.ok) {
+              alert("You have successfully enrolled!");
+              // Change button text and disable it
+              btnElement.textContent = 'Enrolled';
+              btnElement.classList.remove('btn');
+              btnElement.classList.add('disabled');
+              btnElement.style.backgroundColor = '#6c757d'; // muted gray
+              btnElement.style.cursor = 'not-allowed';
+              btnElement.removeAttribute('onclick'); // prevent future clicks
+            } else {
+              alert("Something went wrong. Please try again.");
+            }
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert("Enrollment failed. Check your internet or console.");
+          });
+        }
+        </script>
+        
 
 
 </body>

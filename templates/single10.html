@@ -162,8 +162,17 @@
                 <h4 class="mt-2 p-2 text-center" style="color: #2a9d8f;">Paid</h4>
                 <h4 class="mt-2 p-2 text-center" style="color: #e63946;">Rs. <small>299</small></h4>
 
-                <div class="buttons px-3">
-                    <a href="#" class="text-decoration-none text-white btn w-100 mb-2" style="background-color: #1d3557;">ENROLL NOW</a>
+                <div class="buttons" style="text-align: center;">
+                    {% if user.is_authenticated %}
+                            <form id="payment-form-css" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="course_name" value="Front End Development - CSS">
+                                <input type="hidden" name="amount" value="19900">
+                                <button type="submit" class="btn btn-success">Enroll Now</button>
+                            </form>
+                            {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-warning">Login to Enroll</a>
+                            {% endif %}
                 </div>
 
                 <div class="list mt-2 px-3">

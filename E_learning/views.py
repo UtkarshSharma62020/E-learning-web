@@ -36,7 +36,7 @@ def create_checkout_session(request):
             mode='payment',
             customer_email=request.user.email,
             success_url=request.build_absolute_uri(
-                f"/payment-success/?session_id={{CHECKOUT_SESSION_ID}}"
+    "/payment-success/?session_id={CHECKOUT_SESSION_ID}"
             ),
             cancel_url=request.build_absolute_uri("/payment-cancelled/"),
         )
